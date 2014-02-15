@@ -1,9 +1,9 @@
-var JStation = require('./jstation');
+var JStation = require('./libs/jstation');
 
-//var songs = ['sounds/ff.mp3','sounds/test.mp3'];
 
-var station = new JStation();
+var station = new JStation({
+    folder: 'musics'
+});
 
 station.run();
 
-station.addFile('ff.mp3');
