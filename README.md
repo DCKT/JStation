@@ -30,3 +30,5 @@ var station = new JStation(songs);
 
 station.run();
 ```
+
+Launch the application : `node app.js`
