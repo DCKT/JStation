@@ -1,0 +1,11 @@
+{
+	"name": "JStation",
+	"version": "0.1.0",
+	"author": "Thomas Deconinck",
+	"description": "Music player",
+	"dependencies": {
+    	"speaker": "*",
+    	"lame": "*",
+    	"async": "*"
+  	}
+}
