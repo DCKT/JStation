@@ -17,7 +17,7 @@ At the moment, some modules are **required** :
   - fs
   - async
 
-You can found them with [npm](https://www.npmjs.org/).
+You just need to use : **`npm install`**
 
 Basic configuration :
 
