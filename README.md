@@ -24,9 +24,10 @@ Basic configuration :
 ```javascript
 var JStation = require('./jstation');
 
-// Custom path or other directory
-var songs = ['sounds/ff.mp3','sounds/test.mp3'];
-var station = new JStation(songs);
+// Specify a folder 
+var station = new JStation({
+  folder: 'musics'
+});
 
 // Fallback case, search all .mp3 files in the sounds directory
 var station = new JStation();
@@ -36,6 +37,9 @@ station.run();
 ```
 
 Launch the application : `node app.js`
+
+### Coming Soon
+The application should be able to read any folder (absolute or relative path).
 
 
 ### Help
