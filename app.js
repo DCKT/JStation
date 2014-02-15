@@ -5,3 +5,5 @@ var JStation = require('./jstation');
 var station = new JStation();
 
 station.run();
+
+station.addFile('ff.mp3');
