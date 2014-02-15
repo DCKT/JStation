@@ -55,7 +55,7 @@ JStation.prototype.run = function() {
         rs.pipe(decoder).on('format', function(f) {
             var s = new Speaker(f);
             this.pipe(s);
-            console.log("We play this song : "+ song.getFile());
+            console.log("We play this song : \033[33m"+ song.getName()+"\033[39m");
         }).on('end', function() {
             console.log("Song end, it's time to change");
             // Return null able to async to iterate over
