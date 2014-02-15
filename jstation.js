@@ -7,15 +7,28 @@ var async = require('async');
 var audioOptions = {channels: 2, bitDepth: 16, sampleRate: 44100};
 
 var JStation = function(songs) {
-	this.songs = songs;
+	console.log("\033[36m## Constructor called ## \033[39m\n");
+
+	if (songs == undefined) {
+		// Take all .mp3 files in sounds directory if no songs supplied
+		this.songs = fs.readdirSync(__dirname+'/sounds/').filter(function(item) {
+			return item.indexOf('.mp3') != -1;
+		});
+	}
+	else {
+		this.songs = songs;
+	}
 }
 
+
 JStation.prototype.run = function() {
+	console.log("\033[36m## Run method called ##\033[39m\n");
+	
 	var self = this;
 	var play = function(song, cb) {
 
 		// Create the readStream
-		var rs = fs.createReadStream(song);
+		var rs = fs.createReadStream('sounds/'+song);
 
 		// Create the decoder
 		var decoder = new lame.Decoder();
@@ -26,7 +39,6 @@ JStation.prototype.run = function() {
 			var s = new Speaker(f);
 			this.pipe(s);
 		}).on('end', function() {
-			console.log(sound);
 			console.log("Song end, it's time to change");
 			// Return null able to async to iterate over
 			// the next item array
